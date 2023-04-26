@@ -11,25 +11,36 @@ class Program
         int number = randomGenerator.Next(1,100);
         string userInput = "";
         int guess = 0;
+        int count = 0;
+        string response = "yes";
 
-        do
+        while (response == "yes")
         {
-            Console.Write("What is your guess? ");
-            userInput = Console.ReadLine();
-            guess = int.Parse(userInput);
+            count = 0;
+            do
+            {
+                Console.Write("What is your guess? ");
+                userInput = Console.ReadLine();
+                guess = int.Parse(userInput);
+                count = count + 1;
 
-            if (guess > number)
-            {
-                Console.WriteLine("Lower");
-            }
-            else if (guess < number)
-            {
-                Console.WriteLine("Higher");
-            }
-            else
-            {
-                Console.WriteLine("You guessed it!");
-            }
-        } while (guess != number);
-    }
+                if (guess > number)
+                {
+                    Console.WriteLine("Lower");
+                }
+                else if (guess < number)
+                {
+                    Console.WriteLine("Higher");
+                }
+                else
+                {
+                    Console.WriteLine("You guessed it!");
+                }
+            } while (guess != number);
+        
+        Console.WriteLine($"You made {count} guesses.");
+        Console.Write("Do you want to continue? ");
+        response = Console.ReadLine();
+        }
+    }   
 }
