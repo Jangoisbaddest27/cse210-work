@@ -5,7 +5,7 @@ public class Journal
     public string _loadFileName;
     public List<Entry> _entries = new List<Entry>();
 
-     public void DisplayJournal()
+    public void DisplayJournal()
     {
         foreach (Entry entry in _entries)
         {

@@ -6,7 +6,7 @@ public class Entry
     public string _prompt;
     public string _userResponse;
 
-        public void DisplayEntry()
+    public void DisplayEntry()
     {
         Console.WriteLine($"Date: {_date} - Prompt: {_prompt}");
         Console.WriteLine($"{_userResponse}");
