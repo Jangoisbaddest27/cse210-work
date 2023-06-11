@@ -67,6 +67,7 @@ class Program
             else    //Quit
             {
                 Console.WriteLine("Have a good day!");
+                choice = 5;
             }
         }
     }

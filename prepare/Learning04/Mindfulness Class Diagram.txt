@@ -1,0 +1,42 @@
+@startuml
+ActivityClass <|-- BreathingActivityClass
+ActivityClass <|-- ReflectingActivityClass
+ActivityClass <|-- ListingActivityClass
+
+class ActivityClass {
+# _activityName: string
+# _activityMessage: string
+# _activityDuration: int
+
+# _DisplayStart(activityName: string, activityMessage: string)
+# _DisplayEnd(activityName: string)
+# _PauseWait()
+# _PauseCountdown()
+}
+
+
+class BreathingActivityClass {
+# _DisplayBreathingCountdown(activityDuration: int)
+}
+
+
+class ReflectingActivityClass {
+# _prompts: List<>
+# _questions: List<>
+
+# _RandomPrompt()
+# _RandomQuestion()
+# _DisplayPrompt(prompt: string)
+# _DisplayQuestion(question: string)
+# _DisplayReflectingCountdown(activityDuration: int)
+}
+
+
+class ListingActivityClass {
+# _prompts: List<>
+# _responseCount: int
+
+# _RandomPrompt()
+# _DisplayListingCountdown(activityDuration: int)
+}
+@enduml
