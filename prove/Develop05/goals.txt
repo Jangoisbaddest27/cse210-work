@@ -1,0 +1,4 @@
+950
+SingleGoal:single|yup|50|True
+ContinuousGoal:cont|yes|100
+ChecklistGoal:check|uh|200|2|2|500
