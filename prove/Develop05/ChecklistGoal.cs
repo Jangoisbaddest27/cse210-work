@@ -2,9 +2,9 @@
 
 public class ChecklistGoal : Goal
 {
-    int _goalCurrentCount;
-    int _goalFinalCount;
-    int _goalBonus;
+    private int _goalCurrentCount;
+    private int _goalFinalCount;
+    private int _goalBonus;
 
     public ChecklistGoal(string goalName, string goalDescription, int goalPoints, int goalCurrentCount, int goalFinalCount, int goalBonus, bool isCompleted) : base(goalName, goalDescription, goalPoints, isCompleted)
     {
