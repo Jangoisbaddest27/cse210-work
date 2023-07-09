@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello FinalProject World!");
+        InputOutput test = new InputOutput("Log_1.csv");
+        test._RunCalculations();
     }
 }
