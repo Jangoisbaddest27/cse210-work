@@ -1,16 +1,17 @@
 
 public class FuelConsumption : DataPoint
 {
-    public double _FM;
+    private double _Fm;
 
-    public FuelConsumption(string PIDName, string PIDUnits, double FM) : base(PIDName, PIDUnits)
+    public FuelConsumption(string PidName, string PidUnits, double Fm) : base(PidName, PidUnits)
     {
-        _FM = FM;
+        _Fm = Fm;
     }
 
+    //Calculate and return Fuel Consumption using Fuel Mass
     public override double _NewPointCalculation()
     {
-        double GPH = (_FM * 3600) / 2834.89;
-        return Math.Round(GPH, 3);
+        double Gph = (_Fm * 3600) / 2834.89;
+        return Math.Round(Gph, 3);
     }
 }

@@ -1,16 +1,17 @@
 
 public class AirfuelRatio : DataPoint
 {
-    public double _upstreamLambda;
+    private double _upstreamLambda;
 
-    public AirfuelRatio(string PIDName, string PIDUnits, double upstreamLambda) : base(PIDName, PIDUnits)
+    public AirfuelRatio(string PidName, string PidUnits, double upstreamLambda) : base(PidName, PidUnits)
     {
         _upstreamLambda = upstreamLambda;
     }
 
+    //Calculate and return Airfuel Ratio using Upstream Lambda
     public override double _NewPointCalculation()
     {
-        double AFR = _upstreamLambda * 14.7;
-        return Math.Round(AFR, 3); 
+        double Afr = _upstreamLambda * 14.7;
+        return Math.Round(Afr, 3); 
     }
 }

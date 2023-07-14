@@ -1,22 +1,23 @@
 
 public class FuelEconomy : DataPoint
 {
-    public double _MPH;
-    public double _GPH;
+    private double _Mph;
+    private double _Gph;
 
-    public FuelEconomy(string PIDName, string PIDUnits, double MPH, double GPH) : base(PIDName, PIDUnits)
+    public FuelEconomy(string PidName, string PidUnits, double Mph, double Gph) : base(PidName, PidUnits)
     {
-        _MPH = MPH;
-        _GPH = GPH;
+        _Mph = Mph;
+        _Gph = Gph;
     }
 
+    //Calculate and return Fuel Economy using Vehicle Speed (MPG) and Fuel Consumption
     public override double _NewPointCalculation()
     {
-        double MPG = 0;
-        if (_GPH > 0)   //Keep MPG at 0 if GPH is 0 or negative
+        double Mpg = 0;
+        if (_Gph > 0)   //Keep MPG at 0 if GPH is 0 or negative
         {
-            MPG = _MPH / _GPH;
+            Mpg = _Mph / _Gph;
         }
-        return Math.Round(MPG, 3);
+        return Math.Round(Mpg, 3);
     }
 }

@@ -1,26 +1,27 @@
 
 public class FuelMass : DataPoint
 {
-    public double _MAF;
-    public double _STFT;
-    public double _LTFT;
-    public double _AFR;
+    private double _Maf;
+    private double _Stft;
+    private double _Ltft;
+    private double _Afr;
 
-    public FuelMass(string PIDName, string PIDUnits, double MAF, double STFT, double LTFT, double AFR) : base(PIDName, PIDUnits)
+    public FuelMass(string PidName, string PidUnits, double Maf, double Stft, double Ltft, double Afr) : base(PidName, PidUnits)
     {
-        _MAF = MAF;
-        _STFT = STFT;
-        _LTFT = LTFT;
-        _AFR = AFR;
+        _Maf = Maf;
+        _Stft = Stft;
+        _Ltft = Ltft;
+        _Afr = Afr;
     }
 
+    //Calculate and return Fuel Mass using Mass Air Flow, Short Term Fuel Trim, Long Term Fuel Trim, and Airfuel Ratio
     public override double _NewPointCalculation()
     {
-        double FM = 0;
-        if (_AFR > 0)   //Keep FM at 0 if AFR is 0 or negative
+        double Fm = 0;
+        if (_Afr > 0)   //Keep FM at 0 if AFR is 0 or negative
         {
-            FM = (_MAF * (1 + (_STFT / 100)) * (1 + (_LTFT / 100))) / _AFR;
+            Fm = (_Maf * (1 + (_Stft / 100)) * (1 + (_Ltft / 100))) / _Afr;
         }
-        return Math.Round(FM, 3);
+        return Math.Round(Fm, 3);
     }
 }
